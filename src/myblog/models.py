@@ -1,8 +1,8 @@
-from email.policy import default
 from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
+from taggit.managers import TaggableManager
 
 
 # Create your models here.
@@ -32,6 +32,7 @@ class Post (models.Model):
     published = PublishedManager()  # Our custom manager
     def get_absolute_url(self):
         return reverse('myblog:post_detail', args=[self.publish.year, self.publish.month, self.publish.day, self.slug])
+    tags = TaggableManager()
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
