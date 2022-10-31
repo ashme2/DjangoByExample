@@ -35,6 +35,8 @@ EMAIL_HOST_PASSWORD = 'your_app_password'    # Google Gmail App Password
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
+SITE_ID = 1
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -45,7 +47,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myblog.apps.MyblogConfig',
-    'taggit'
+    'taggit',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [
